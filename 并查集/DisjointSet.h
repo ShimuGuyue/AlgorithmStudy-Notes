@@ -1,5 +1,7 @@
 #include <vector>
 using std::vector;
+#include <set>
+using std::set;
 
 struct DisjointSet
 {
@@ -40,5 +42,15 @@ struct DisjointSet
 	bool In_Same_Set(const int &x, const int &y)
 	{
 		return Find_Set(x) == Find_Set(y);
+	}
+
+	int Count_Sets(void)
+	{
+		set<int> sets;
+		for (const int &node : sets)
+		{
+			sets.insert(Find_Set(node));
+		}
+		return sets.size();
 	}
 };
